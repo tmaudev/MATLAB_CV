@@ -1,0 +1,15 @@
+bacteria = imread('bacteria.bmp');
+bacteria_binary = bacteria < 102;
+bacteria_label = bwlabel(bacteria_binary);
+rgb_bacteria = label2rgb(bacteria_label);
+
+fprintf('Total Area: %d\n', sum(bacteria_binary(:)));
+
+bacteria_areas = regionprops(bacteria_binary, 'Area');
+
+fprintf('Bacteria Areas:\n');
+for n = 1:21
+    area = bacteria_areas(n);
+    fprintf('%d: ', n);
+    disp(are
+end
