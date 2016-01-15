@@ -8,7 +8,7 @@ function [ image ] = canny( original, mask_size, sigma, t_low, t_high )
     
     % Step 2: Gradient Approximation (Sobel Operator)
     [gradient_image, v, h] = sobel(smooth_image);
-    figure(1), imshow(gradient_image);
+
     % Step 3: Edge Direction
     angles = radtodeg(atan2(v, h));
     angles(angles < 0) = angles(angles < 0) + 180;
@@ -22,15 +22,12 @@ function [ image ] = canny( original, mask_size, sigma, t_low, t_high )
     
     % Step 5: Non-Maximum Suppression
     suppressed_image = nonMaxSuppression(gradient_image, angles, mask_size);
-    figure(2), imshow(suppressed_image);
+    image = suppressed_image;
     
     % Step 6: Double Thresholding
-    suppressed_image(suppressed_image < t_low) = 0;
-    suppressed_image(suppressed_image < t_high & suppressed_image > t_low) = 0.2;
-    suppressed_image(suppressed_image > t_high) = 1;
-    figure(3), imshow(suppressed_image);
-    
-    image = suppressed_image;
+    image(image < t_low) = 0;
+    image(image < t_high & image > t_low) = 0.2;
+    image(image > t_high) = 1;
     
 end
 
