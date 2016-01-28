@@ -7,7 +7,7 @@ function [ image ] = canny( original, mask_size, sobel_threshold, sigma, t_low, 
     smooth_image = convolution(original, mask_gauss);
     
     % Step 2: Gradient Approximation (Sobel Operator)
-    [gradient_image, v, h] = sobel(smooth_image, sobel_threshold, 0);
+    [gradient_image, v, h] = edge(smooth_image, 'sobel', );%sobel(smooth_image, sobel_threshold, 0);
 
     % Step 3: Edge Direction
     angles = radtodeg(atan2(v, h));
@@ -29,6 +29,7 @@ function [ image ] = canny( original, mask_size, sobel_threshold, sigma, t_low, 
     image(image < t_high & image > t_low) = 0.2;
     image(image > t_high) = 1;
     
+    figure(10), imshow(image);
     image = hysteresis(image, mask_size);
     image = (image == 1);
     

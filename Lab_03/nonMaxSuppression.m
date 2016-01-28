@@ -11,26 +11,47 @@ function [ image ] = nonMaxSuppression( original, angles, mask_size )
     
     for c = offset:col
         for r = offset:row
-            temp = original(r-offset+1:r+offset-1, c-offset+1:c+offset-1);
-            value = median(temp(:));
+            temp = image(r-offset+1:r+offset-1, c-offset+1:c+offset-1);
+            temp(offset, offset) = 0;
 
+            diag_mask = ones(mask_size, mask_size);
+            diag_mask(logical(eye(size(diag_mask)))) = 0;
+            
             if angles(r, c) == 0
-                if original(r, c) < max(temp(offset, :))
+                if image(r, c) <= max(temp(offset, :))
                     image(r, c) = 0;
+                else
+                    temp = image(r, c);
+                    image(r, c - offset + 1: c + offset - 1) = 0;
+                    image(r, c) = temp;
                 end
             elseif angles(r, c) == 45
                 temp = rot90(temp);
                 
-                if original(r, c) < max(diag(temp))
+                if image(r, c) <= max(diag(temp))
                     image(r, c) = 0;
+                else
+                    temp = image(r, c);
+                    image(r - offset + 1 : r + offset - 1, c - offset + 1 : c + offset - 1) =...
+                        image(r - offset + 1 : r + offset - 1, c - offset + 1 : c + offset - 1) .* diag_mask;
+                    image(r, c) = temp;
                 end
             elseif angles(r, c) == 90
-                if original(r, c) < max(temp(:, offset))
+                if image(r, c) <= max(temp(:, offset))
                     image(r, c) = 0;
+                else
+                    temp = image(r, c);
+                    image(r - offset + 1 : r + offset - 1, c) = 0;
+                    image(r, c) = temp;
                 end
             elseif angles(r, c) == 135
-                if original(r, c) < max(diag(temp))
+                if image(r, c) <= max(diag(temp))
                     image(r, c) = 0;
+                else
+                    temp = image(r, c);
+                    image(r - offset + 1 : r + offset - 1, c - offset + 1 : c + offset - 1) =...
+                        image(r - offset + 1 : r + offset - 1, c - offset + 1 : c + offset - 1) .* diag_mask;
+                    image(r, c) = temp;
                 end
             end
         end

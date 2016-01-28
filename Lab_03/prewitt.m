@@ -1,4 +1,4 @@
-function [ image, v, h] = prewitt( original )
+function [ image, v, h] = prewitt( original, threshold_percent )
 %Prewitt Prewitt Operator Implementation
 %   Estimates Image Gradient
 
@@ -7,6 +7,8 @@ function [ image, v, h] = prewitt( original )
     
     [v, h] = differentiation(original, mask_prewitt_v, mask_prewitt_h);
     image = sqrt(v .^ 2 + h .^ 2);
+    
+    image = image > threshold_percent * max(image(:));
     
 end
 
