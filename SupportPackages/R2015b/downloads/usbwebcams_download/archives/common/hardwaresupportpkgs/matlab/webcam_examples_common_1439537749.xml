@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<componentData>
+  <component>
+    <componentBaseName>hardwaresupportpkgs/matlab/webcam_examples</componentBaseName>
+    <componentFileName>hardwaresupportpkgs/matlab/webcam_examples_common_1439537749.zip</componentFileName>
+    <componentName>hardwaresupportpkgs/matlab/webcam_examples_common</componentName>
+    <componentVersion>1439537749</componentVersion>
+    <locale />
+    <numFiles>10</numFiles>
+    <platformList>
+      <platform>glnxa64</platform>
+      <platform>maci64</platform>
+      <platform>win32</platform>
+      <platform>win64</platform>
+    </platformList>
+    <releaseFamily>R2015b</releaseFamily>
+    <size>546012</size>
+    <type />
+    <uncompressedBytes>562221</uncompressedBytes>
+  </component>
+</componentData>
+

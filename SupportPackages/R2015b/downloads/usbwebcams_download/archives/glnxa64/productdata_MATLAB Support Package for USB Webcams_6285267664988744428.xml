@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productAdditionalComps>
+  <dependsOn>
+    <component>
+      <name>hardwaresupportpkgs/matlab/webcam_glnxa64</name>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+      </platformList>
+      <version>1439538014</version>
+    </component>
+  </dependsOn>
+  <isControllingProduct>false</isControllingProduct>
+  <platform>glnxa64</platform>
+  <productBaseCode>USBWEBCAM</productBaseCode>
+  <productName>MATLAB Support Package for USB Webcams</productName>
+  <productNumber>2055</productNumber>
+  <productVersion>15.2.0</productVersion>
+  <releaseDescription>R2015b</releaseDescription>
+  <releaseFamily>R2015b</releaseFamily>
+</productAdditionalComps>
+

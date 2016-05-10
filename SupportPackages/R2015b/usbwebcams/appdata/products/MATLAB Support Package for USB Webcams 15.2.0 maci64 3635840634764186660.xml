@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productData>
+  <dependsOn>
+    <component>
+      <name>hardwaresupportpkgs/matlab/webcam_common</name>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win32</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1439538035</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/matlab/webcam_examples_common</name>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win32</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1439537749</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/usbwebcams_doc_en_common</name>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win32</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1439538126</version>
+    </component>
+    <component>
+      <name>hardwaresupportpkgs/usbwebcams_fe_common</name>
+      <locale />
+      <platformList>
+        <platform>glnxa64</platform>
+        <platform>maci64</platform>
+        <platform>win32</platform>
+        <platform>win64</platform>
+      </platformList>
+      <version>1392559436</version>
+    </component>
+  </dependsOn>
+  <installerUsage>
+    <usage>professional</usage>
+  </installerUsage>
+  <isControllingProduct>false</isControllingProduct>
+  <platformList>
+    <platform>glnxa64</platform>
+    <platform>maci64</platform>
+    <platform>win32</platform>
+    <platform>win64</platform>
+  </platformList>
+  <productBaseCode>USBWEBCAM</productBaseCode>
+  <productName>MATLAB Support Package for USB Webcams</productName>
+  <productNumber>2055</productNumber>
+  <productVersion>15.2.0</productVersion>
+  <releaseDescription>R2015b</releaseDescription>
+  <releaseFamily>R2015b</releaseFamily>
+  <requiredProducts />
+</productData>
+
